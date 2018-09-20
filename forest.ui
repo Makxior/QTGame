@@ -29,7 +29,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/tree.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/tree.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -83,7 +83,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/tree.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/tree.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="tree_3">
@@ -99,7 +99,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/tree.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/tree.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="tree_4">
@@ -115,7 +115,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/tree.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/tree.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="tree_5">
@@ -131,7 +131,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/tree.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/tree.png</pixmap>
    </property>
   </widget>
   <zorder>tree_5</zorder>
@@ -142,6 +142,8 @@
   <zorder>tree_3</zorder>
   <zorder>tree</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="files.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -29,7 +29,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/stone.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="stone_2">
@@ -45,7 +45,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/stone.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="stone_3">
@@ -61,7 +61,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/stone.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="stone_4">
@@ -77,7 +77,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/stone.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="stone_5">
@@ -93,7 +93,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Imgs/stone.png</pixmap>
+    <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -133,10 +133,12 @@
     </font>
    </property>
    <property name="text">
-    <string>Leave Cave</string>
+    <string>Leave Quarry</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="files.qrc"/>
+ </resources>
  <connections/>
 </ui>

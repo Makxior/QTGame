@@ -7,13 +7,6 @@ Forest::Forest(QWidget *parent) :
     ui(new Ui::Forest)
 {
     ui->setupUi(this);
-    {
-    ui->tree->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/tree.png"));
-    ui->tree_2->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/tree.png"));
-    ui->tree_3->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/tree.png"));
-    ui->tree_4->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/tree.png"));
-    ui->tree_5->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/tree.png"));
-    }
 }
 
 Forest::~Forest()

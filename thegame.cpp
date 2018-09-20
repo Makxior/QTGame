@@ -14,9 +14,6 @@ TheGame::TheGame(QWidget *parent) :
 {
     ui->setupUi(this);
     //Player start position settings
-    ui->player->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/Player.png"));
-    ui->wood->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/Forest.png"));
-    ui->stone->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/Quarry.png"));
 }
 bool kolizja(QLabel* first, QLabel* second)
 {

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Imgs/Cave.jpg</file>
+        <file>Imgs/Forest.png</file>
+        <file>Imgs/Player.png</file>
+        <file>Imgs/Quarry.png</file>
+        <file>Imgs/stone.png</file>
+        <file>Imgs/tree.png</file>
+    </qresource>
+</RCC>

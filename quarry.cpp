@@ -6,11 +6,6 @@ Quarry::Quarry(QWidget *parent) :
     ui(new Ui::Quarry)
 {
     ui->setupUi(this);
-    ui->stone->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/stone.png"));
-    ui->stone_2->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/stone.png"));
-    ui->stone_3->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/stone.png"));
-    ui->stone_4->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/stone.png"));
-    ui->stone_5->setPixmap(QPixmap("C:/Users/Grzdz/Documents/TheGame/Imgs/stone.png"));
 }
 
 Quarry::~Quarry()
