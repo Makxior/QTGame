@@ -1,2 +1,6 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/imgs">
+        <file>Turtle.png</file>
+    </qresource>
+    <qresource prefix="/icons"/>
+</RCC>

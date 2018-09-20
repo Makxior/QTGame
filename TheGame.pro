@@ -24,15 +24,23 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        thegame.cpp
+        thegame.cpp \
+    forest.cpp \
+    quarry.cpp
 
 HEADERS += \
-        thegame.h
+        thegame.h \
+    forest.h \
+    quarry.h
 
 FORMS += \
-        thegame.ui
+        thegame.ui \
+    forest.ui \
+    quarry.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES +=
