@@ -1,5 +1,6 @@
 #include "quarry.h"
 #include "ui_quarry.h"
+#include <QSound>
 
 Quarry::Quarry(QWidget *parent) :
     QDialog(parent),
@@ -20,5 +21,6 @@ void Quarry::on_exit_clicked()
 
 void Quarry::on_pushButton_clicked()
 {
+    QSound::play(":/Sounds/Sounds/Quarry.wav");
     NumberOfStone++;
 }

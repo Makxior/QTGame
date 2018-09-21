@@ -2,9 +2,21 @@
     <qresource prefix="/images">
         <file>Imgs/Cave.jpg</file>
         <file>Imgs/Forest.png</file>
-        <file>Imgs/Player.png</file>
         <file>Imgs/Quarry.png</file>
         <file>Imgs/stone.png</file>
         <file>Imgs/tree.png</file>
+    </qresource>
+    <qresource prefix="/player">
+        <file>Imgs/player1.png</file>
+        <file>Imgs/player2.png</file>
+        <file>Imgs/player3.png</file>
+        <file>Imgs/player.png</file>
+        <file>Imgs/player12.png</file>
+        <file>Imgs/player22.png</file>
+        <file>Imgs/player32.png</file>
+    </qresource>
+    <qresource prefix="/Sounds">
+        <file>Sounds/Quarry.wav</file>
+        <file>Sounds/Forest.wav</file>
     </qresource>
 </RCC>

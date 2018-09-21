@@ -2,7 +2,6 @@
 #define FOREST_H
 
 #include <QDialog>
-
 namespace Ui {
 class Forest;
 }

@@ -1,6 +1,7 @@
 #include "forest.h"
 #include "thegame.h"
 #include "ui_forest.h"
+#include <QSound>
 
 Forest::Forest(QWidget *parent) :
     QDialog(parent),
@@ -16,6 +17,7 @@ Forest::~Forest()
 
 void Forest::on_pushButton_clicked()
 {
+    QSound::play(":/Sounds/Sounds/Forest.wav");
     NumberOfWood++;
 }
 

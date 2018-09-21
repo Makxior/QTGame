@@ -5,6 +5,13 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsItem>
+#include <QTime>
+#include <QSound>
+
+int randInt(int low, int high)
+{
+    return qrand() % ((high + 1) - low) + low;
+}
 
 //Forest forest;
 
@@ -14,6 +21,14 @@ TheGame::TheGame(QWidget *parent) :
 {
     ui->setupUi(this);
     //Player start position settings
+    QTime time = QTime::currentTime();
+    qsrand((uint)time.msec());
+
+    player = randInt(1,3);
+    if(player == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/player1.png"));
+    if(player == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/player2.png"));
+    if(player == 3) ui->player->setPixmap(QPixmap(":/player/Imgs/player3.png"));
+
 }
 bool kolizja(QLabel* first, QLabel* second)
 {
@@ -44,16 +59,22 @@ int GettingStone()
 }
 void TheGame::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Left){
-            Move(ui->player, -20,0);
+            Move(ui->player, -24,0);
+            if(player==1) ui->player->setPixmap(QPixmap(":/player/Imgs/player12.png"));
+            if(player==2) ui->player->setPixmap(QPixmap(":/player/Imgs/player22.png"));
+            if(player==3) ui->player->setPixmap(QPixmap(":/player/Imgs/player32.png"));
         }
         else if (event->key() == Qt::Key_Right){
-            Move(ui->player, 20,0);
+            Move(ui->player, 24,0);
+            if(player==1) ui->player->setPixmap(QPixmap(":/player/Imgs/player1.png"));
+            if(player==2) ui->player->setPixmap(QPixmap(":/player/Imgs/player2.png"));
+            if(player==3) ui->player->setPixmap(QPixmap(":/player/Imgs/player3.png"));
         }
         else if (event->key() == Qt::Key_Up){
-            Move(ui->player, 0,-20);
+            Move(ui->player, 0,-24);
         }
         else if (event->key() == Qt::Key_Down){
-            Move(ui->player, 0,20);
+            Move(ui->player, 0,24);
         }
 }
 

@@ -35,6 +35,7 @@ private slots:
 private:
     int wood{0};
     int stone{0};
+    int player;
     Ui::TheGame *ui;
     QString currentFile{""};
 };
