@@ -1,4 +1,6 @@
 #include "thegame.h"
+#include "quarry.h"
+#include "forest.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

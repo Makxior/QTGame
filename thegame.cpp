@@ -1,19 +1,12 @@
 #include "thegame.h"
+#include "forest.h"
+#include "quarry.h"
 #include "ui_thegame.h"
-#include <forest.h>
-#include <quarry.h>
 #include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsItem>
 #include <QTime>
 #include <QSound>
-
-int randInt(int low, int high)
-{
-    return qrand() % ((high + 1) - low) + low;
-}
-
-//Forest forest;
 
 TheGame::TheGame(QWidget *parent) :
     QMainWindow(parent),
@@ -24,7 +17,7 @@ TheGame::TheGame(QWidget *parent) :
     QTime time = QTime::currentTime();
     qsrand((uint)time.msec());
 
-    player = randInt(1,3);
+    player = qrand() % ((3 + 1) - 1) + 1;
     if(player == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/player1.png"));
     if(player == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/player2.png"));
     if(player == 3) ui->player->setPixmap(QPixmap(":/player/Imgs/player3.png"));
@@ -37,25 +30,23 @@ bool kolizja(QLabel* first, QLabel* second)
     return true;
     else return false;
 }
-int GettingWood()
+void TheGame::GettingWood()
 {
     Forest forest;
-    int temp =0;
     forest.setModal(true);
     forest.exec();
-    temp = forest.NumberOfWood;
+    wood+=forest.NumberOfWood;
     forest.NumberOfWood =0;
-    return temp;
 }
-int GettingStone()
+void TheGame::GettingStone()
 {
     Quarry quarry;
-    int temp =0;
     quarry.setModal(true);
     quarry.exec();
-    temp = quarry.NumberOfStone;
+    stone += quarry.NumberOfStone;
+    gold += quarry.NumberOfGold;
     quarry.NumberOfStone = 0;
-    return temp;
+    quarry.NumberOfGold = 0;
 }
 void TheGame::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Left){
@@ -85,17 +76,47 @@ TheGame::~TheGame()
 
 void TheGame::on_actionNew_triggered()
 {
-    //change all values to 0
+    wood =0;
+    stone =0;
+    gold =0;
+    ui->player->move(300,240);
+    ui->AmountOfStone->setText("STONE : 0");
+     ui->AmountOfWood->setText("WOOD  : 0");
+     ui->AmountOfGold->setText("GOLD  : 0");
 }
 
 void TheGame::on_actionLoad_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName();
+    QString filename = QFileDialog::getOpenFileName(this,
+                                                    tr("Load Game"), "",
+                                                    tr("Game (*.txt);;All Files (*)"));
+    QFile file( filename );
+    if ( file.open(QIODevice::ReadWrite) )
+    {
+        int temp,temp2;
+        QTextStream stream( &file );
+        stream >>wood;
+        ui->AmountOfWood->setText("WOOD  : " + QString::number(wood));
+        stream >>stone;
+        ui->AmountOfStone->setText("STONE : " +QString::number(stone));
+        stream >>gold;
+        ui->AmountOfGold->setText("GOLD  : " + QString::number(gold));
+        stream>>temp>>temp2;
+        ui->player->move(temp,temp2);
+    }
 }
 
 void TheGame::on_actionSave_triggered()
 {
-    QString filename = QFileDialog::getSaveFileName();
+    QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Save Game"), "",
+            tr("Game (*.txt);;All Files (*)"));
+    QFile file( fileName );
+    if ( file.open(QIODevice::ReadWrite) )
+    {
+        QTextStream stream( &file );
+        stream << wood<<" "<<stone<<" "<<gold<<" "<<ui->player->x()<<" "<<ui->player->y();
+    }
 }
 void TheGame::Move(QLabel* player, int dir, int dir2)
 {
@@ -103,16 +124,18 @@ void TheGame::Move(QLabel* player, int dir, int dir2)
         if(kolizja(player,ui->wood))
         {
             player->move(player->x()-dir,player->y()-dir2);
-            wood+=GettingWood();
+            GettingWood();
             QString s = QString::number(wood);
             ui->AmountOfWood->setText("WOOD  : " + s);
         }
         if(kolizja(player,ui->stone))
         {
             player->move(player->x()-dir,player->y()-dir2);
-            stone+=GettingStone();
+            GettingStone();
             QString s = QString::number(stone);
             ui->AmountOfStone->setText("STONE : " + s);
+            QString s2 = QString::number(gold);
+            ui->AmountOfGold->setText("GOLD  : " + s2);
         }
 }
 

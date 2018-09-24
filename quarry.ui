@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(255,255,255)</string>
   </property>
-  <widget class="QLabel" name="stone">
+  <widget class="QLabel" name="rock">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -32,7 +32,7 @@
     <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="stone_2">
+  <widget class="QLabel" name="rock_2">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -48,7 +48,7 @@
     <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="stone_3">
+  <widget class="QLabel" name="rock_3">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -64,7 +64,7 @@
     <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="stone_4">
+  <widget class="QLabel" name="rock_4">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -80,11 +80,11 @@
     <pixmap resource="files.qrc">:/images/Imgs/stone.png</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="stone_5">
+  <widget class="QLabel" name="rock_5">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>120</y>
+     <x>80</x>
+     <y>160</y>
      <width>101</width>
      <height>81</height>
     </rect>
@@ -134,6 +134,90 @@
    </property>
    <property name="text">
     <string>Leave Quarry</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="HowManyStone">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>81</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>26</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:gray</string>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="HowManyGold">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>90</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>26</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:gold</string>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pickaxe">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>30</y>
+     <width>51</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="files.qrc">:/images/Imgs/pickaxe.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gold">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>90</y>
+     <width>51</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="files.qrc">:/images/Imgs/gold.png</pixmap>
    </property>
   </widget>
  </widget>

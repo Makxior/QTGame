@@ -2,6 +2,7 @@
 #define QUARRY_H
 
 #include <QDialog>
+#include <thegame.h>
 
 namespace Ui {
 class Quarry;
@@ -14,15 +15,20 @@ class Quarry : public QDialog
 public:
     explicit Quarry(QWidget *parent = nullptr);
     ~Quarry();
-    friend int GettingStone();
+    friend void TheGame::GettingStone();
 
 private slots:
     void on_exit_clicked();
 
     void on_pushButton_clicked();
+    void CutARock();
+    void GrownARock();
+    void Unlock();
 
 private:
     int NumberOfStone=0;
+    int NumberOfGold=0;
+    int NumberOfRocks =5;
     Ui::Quarry *ui;
 };
 

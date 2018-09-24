@@ -23,6 +23,8 @@ public:
     explicit TheGame(QWidget *parent = nullptr);
     ~TheGame();
     void keyPressEvent(QKeyEvent * event);
+    void GettingWood();
+    void GettingStone();
 
 private slots:
     void on_actionNew_triggered();
@@ -35,6 +37,7 @@ private slots:
 private:
     int wood{0};
     int stone{0};
+    int gold{0};
     int player;
     Ui::TheGame *ui;
     QString currentFile{""};

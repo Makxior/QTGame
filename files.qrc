@@ -5,6 +5,9 @@
         <file>Imgs/Quarry.png</file>
         <file>Imgs/stone.png</file>
         <file>Imgs/tree.png</file>
+        <file>Imgs/ax.png</file>
+        <file>Imgs/gold.png</file>
+        <file>Imgs/pickaxe.png</file>
     </qresource>
     <qresource prefix="/player">
         <file>Imgs/player1.png</file>
@@ -18,5 +21,6 @@
     <qresource prefix="/Sounds">
         <file>Sounds/Quarry.wav</file>
         <file>Sounds/Forest.wav</file>
+        <file>Sounds/Gold.wav</file>
     </qresource>
 </RCC>
