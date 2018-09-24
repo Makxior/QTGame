@@ -139,9 +139,9 @@
   <widget class="QLabel" name="HowManyStone">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>30</y>
-     <width>81</width>
+     <width>61</width>
      <height>61</height>
     </rect>
    </property>
@@ -159,7 +159,7 @@
     <string>0</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="HowManyGold">
@@ -185,7 +185,7 @@
     <string>0</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="pickaxe">

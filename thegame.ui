@@ -53,8 +53,8 @@
    <widget class="QLabel" name="player">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>240</y>
+      <x>330</x>
+      <y>200</y>
       <width>60</width>
       <height>87</height>
      </rect>
@@ -69,13 +69,13 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="wood">
+   <widget class="QLabel" name="forest">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>10</y>
       <width>191</width>
-      <height>151</height>
+      <height>161</height>
      </rect>
     </property>
     <property name="text">
@@ -83,6 +83,9 @@
     </property>
     <property name="pixmap">
      <pixmap resource="files.qrc">:/images/Imgs/Forest.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
@@ -188,7 +191,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="stone">
+   <widget class="QLabel" name="quarry">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -202,6 +205,28 @@
     </property>
     <property name="pixmap">
      <pixmap resource="files.qrc">:/images/Imgs/Quarry.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="buildingSite">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>366</y>
+      <width>181</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="files.qrc">:/images/Imgs/buildingsite.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

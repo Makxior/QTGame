@@ -28,17 +28,20 @@ SOURCES += \
         main.cpp \
         thegame.cpp \
     forest.cpp \
-    quarry.cpp
+    quarry.cpp \
+    buildingsite.cpp
 
 HEADERS += \
         thegame.h \
     forest.h \
-    quarry.h
+    quarry.h \
+    buildingsite.h
 
 FORMS += \
         thegame.ui \
     forest.ui \
-    quarry.ui
+    quarry.ui \
+    buildingsite.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,6 +1,7 @@
 #include "thegame.h"
 #include "forest.h"
 #include "quarry.h"
+#include "buildingsite.h"
 #include "ui_thegame.h"
 #include <QKeyEvent>
 #include <QTimer>
@@ -29,6 +30,12 @@ bool kolizja(QLabel* first, QLabel* second)
     first->y() >= second->y()-first->height() && first->y() <= second->y()+second->height())
     return true;
     else return false;
+}
+void TheGame::Building()
+{
+    BuildingSite buildingsite;
+    buildingsite.setModal(true);
+    buildingsite.exec();
 }
 void TheGame::GettingWood()
 {
@@ -80,9 +87,7 @@ void TheGame::on_actionNew_triggered()
     stone =0;
     gold =0;
     ui->player->move(300,240);
-    ui->AmountOfStone->setText("STONE : 0");
-     ui->AmountOfWood->setText("WOOD  : 0");
-     ui->AmountOfGold->setText("GOLD  : 0");
+    UploadResources();
 }
 
 void TheGame::on_actionLoad_triggered()
@@ -96,11 +101,9 @@ void TheGame::on_actionLoad_triggered()
         int temp,temp2;
         QTextStream stream( &file );
         stream >>wood;
-        ui->AmountOfWood->setText("WOOD  : " + QString::number(wood));
         stream >>stone;
-        ui->AmountOfStone->setText("STONE : " +QString::number(stone));
         stream >>gold;
-        ui->AmountOfGold->setText("GOLD  : " + QString::number(gold));
+        UploadResources();
         stream>>temp>>temp2;
         ui->player->move(temp,temp2);
     }
@@ -121,21 +124,30 @@ void TheGame::on_actionSave_triggered()
 void TheGame::Move(QLabel* player, int dir, int dir2)
 {
         player->move(player->x()+dir,player->y()+dir2);
-        if(kolizja(player,ui->wood))
+        if(kolizja(player,ui->forest))
         {
             player->move(player->x()-dir,player->y()-dir2);
             GettingWood();
-            QString s = QString::number(wood);
-            ui->AmountOfWood->setText("WOOD  : " + s);
+            UploadResources();
         }
-        if(kolizja(player,ui->stone))
+        if(kolizja(player,ui->quarry))
         {
             player->move(player->x()-dir,player->y()-dir2);
             GettingStone();
-            QString s = QString::number(stone);
-            ui->AmountOfStone->setText("STONE : " + s);
-            QString s2 = QString::number(gold);
-            ui->AmountOfGold->setText("GOLD  : " + s2);
+            UploadResources();
         }
+        if(kolizja(player,ui->buildingSite))
+        {
+            player->move(player->x()-dir,player->y()-dir2);
+            Building();
+            UploadResources();
+        }
+}
+void TheGame::UploadResources()
+{
+    ui->AmountOfStone->setText("STONE : " + QString::number(stone));
+    ui->AmountOfWood->setText("WOOD  : " + QString::number(wood));
+    ui->AmountOfGold->setText("GOLD  : " + QString::number(gold));
+
 }
 

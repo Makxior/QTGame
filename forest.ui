@@ -158,7 +158,7 @@
     <string>0</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="ax">
@@ -175,6 +175,9 @@
    </property>
    <property name="pixmap">
     <pixmap resource="files.qrc">:/images/Imgs/ax.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
    </property>
   </widget>
   <zorder>tree_5</zorder>
