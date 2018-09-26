@@ -30,6 +30,14 @@ private slots:
 
 
 
+    void on_BuildQuarry_clicked();
+
+    void on_BuildMarket_clicked();
+
+    void on_BuildStoneBoost_clicked();
+
+    void on_BuildGoldBoost_clicked();
+
 private:
     Ui::BuildingSite *ui;
 };

@@ -1,20 +1,20 @@
-#ifndef QUARRY_H
-#define QUARRY_H
+#ifndef HILLS_H
+#define HILLS_H
 
 #include <QDialog>
 #include <thegame.h>
 
 namespace Ui {
-class Quarry;
+class Hills;
 }
 
-class Quarry : public QDialog
+class Hills : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Quarry(QWidget *parent = nullptr);
-    ~Quarry();
+    explicit Hills(QWidget *parent = nullptr);
+    ~Hills();
     friend void TheGame::GettingStone();
 
 private slots:
@@ -29,7 +29,7 @@ private:
     int NumberOfStone=0;
     int NumberOfGold=0;
     int NumberOfRocks =5;
-    Ui::Quarry *ui;
+    Ui::Hills *ui;
 };
 
 #endif // QUARRY_H

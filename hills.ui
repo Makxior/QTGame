@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Quarry</class>
- <widget class="QDialog" name="Quarry">
+ <class>Hills</class>
+ <widget class="QDialog" name="Hills">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Hills</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color:rgb(255,255,255)</string>
@@ -133,7 +133,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Leave Quarry</string>
+    <string>Leave Hills</string>
    </property>
   </widget>
   <widget class="QLabel" name="HowManyStone">

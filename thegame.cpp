@@ -1,5 +1,5 @@
 #include "thegame.h"
-#include "quarry.h"
+#include "hills.h"
 #include "forest.h"
 #include "buildingsite.h"
 #include "ui_thegame.h"
@@ -17,7 +17,10 @@ TheGame::TheGame(QWidget *parent) :
     if(player == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/player1.png"));
     if(player == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/player2.png"));
     if(player == 3) ui->player->setPixmap(QPixmap(":/player/Imgs/player3.png"));
-    connect(sawmill, SIGNAL(timeout()), this, SLOT(Sawmill()));
+    connect(sawmillTimer, SIGNAL(timeout()), this, SLOT(Sawmill()));
+    ui->SawmillIcon->setVisible(false);
+    connect(quarryTimer, SIGNAL(timeout()), this, SLOT(Quarry()));
+    ui->QuarryIcon->setVisible(false);
 
 }
 bool kolizja(QFrame* first, QFrame* second)
@@ -33,10 +36,30 @@ void TheGame::Sawmill()
     UploadResources();
 
 }
+void TheGame::Quarry()
+{
+    int LuckyCut = qrand() % (10) + 1;;
+    if(LuckyCut == 10)
+    {
+        resources.gold++;
+        UploadResources();
+    }
+    else
+    {
+    resources.stone++;
+    UploadResources();
+    }
+
+}
 void TheGame::LeaveASite()
 {
     if(SawmillBuilt){
-        sawmill->start(2000);
+        sawmillTimer->start(2000);
+        ui->SawmillIcon->setVisible(true);
+    }
+    if(QuarryBuilt){
+        quarryTimer->start(2000);
+        ui->QuarryIcon->setVisible(true);
     }
 }
 void TheGame::Building()
@@ -64,7 +87,7 @@ void TheGame::GettingWood()
 }
 void TheGame::GettingStone()
 {
-    static Quarry quarry;
+    static Hills quarry;
     quarry.exec();
     resources.stone += quarry.NumberOfStone;
     resources.gold += quarry.NumberOfGold;

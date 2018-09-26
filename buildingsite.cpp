@@ -38,7 +38,9 @@ void BuildingSite::on_exit_clicked()
 
 void BuildingSite::on_BuildWoodBoost_clicked()
 {
-
+    QMessageBox msgBox;
+    msgBox.setText("Comming soon");
+    msgBox.exec();
 }
 
 void BuildingSite::on_Buildsawmill_clicked()
@@ -69,4 +71,49 @@ void BuildingSite::UploadResources()
     ui->AmountOfStone->setText("STONE : " + QString::number(AmountOfStone));
     ui->AmountOfWood->setText("WOOD  : " + QString::number(AmountOfWood));
     ui->AmountOfGold->setText("GOLD  : " + QString::number(AmountOfGold));
+}
+
+void BuildingSite::on_BuildQuarry_clicked()
+{
+    QMessageBox msgBox;
+    if(AmountOfStone>= 50 && AmountOfWood >= 50)
+    {
+        msgBox.setText("Quarry have been built");
+        msgBox.exec();
+        AmountOfStone-=50;
+        AmountOfWood-=50;
+        QuarryBuilt = true;
+        WoodSpent +=50;
+        StoneSpent +=50;
+        UploadResources();
+        ui->BuildQuarry->setVisible(false);
+        ui->label_Quarry->setVisible(false);
+        ui->Quarry->setPixmap(QPixmap(":/images/Imgs/Quarry.png"));
+    }
+    else
+    {
+        msgBox.setText("Need more resources");
+        msgBox.exec();
+    }
+}
+
+void BuildingSite::on_BuildMarket_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Comming soon");
+    msgBox.exec();
+}
+
+void BuildingSite::on_BuildStoneBoost_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Comming soon");
+    msgBox.exec();
+}
+
+void BuildingSite::on_BuildGoldBoost_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Comming soon");
+    msgBox.exec();
 }

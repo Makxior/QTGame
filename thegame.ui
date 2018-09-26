@@ -94,9 +94,9 @@
    <widget class="QFrame" name="ResourcesTable">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>280</x>
       <y>10</y>
-      <width>141</width>
+      <width>151</width>
       <height>71</height>
      </rect>
     </property>
@@ -126,7 +126,7 @@
       <rect>
        <x>10</x>
        <y>50</y>
-       <width>111</width>
+       <width>131</width>
        <height>16</height>
       </rect>
      </property>
@@ -142,7 +142,7 @@
       <string notr="true">color:rgb(205,180,0)</string>
      </property>
      <property name="text">
-      <string>GOLD  : 0</string>
+      <string>GOLD  : 50</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -153,7 +153,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>111</width>
+       <width>131</width>
        <height>16</height>
       </rect>
      </property>
@@ -169,7 +169,7 @@
       <string notr="true">color:rgb(105,105,105)</string>
      </property>
      <property name="text">
-      <string>STONE : 0</string>
+      <string>STONE : 50</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -180,7 +180,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>111</width>
+       <width>131</width>
        <height>16</height>
       </rect>
      </property>
@@ -196,7 +196,7 @@
       <string notr="true">color:	rgb(139,69,19)</string>
      </property>
      <property name="text">
-      <string>WOOD  : 0</string>
+      <string>WOOD  : 50</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -216,7 +216,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="files.qrc">:/images/Imgs/Quarry.png</pixmap>
+     <pixmap resource="files.qrc">:/images/Imgs/Hills.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -242,6 +242,68 @@
     </property>
     <property name="scaledContents">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SawmillIcon">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="statusTip">
+     <string extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="whatsThis">
+     <string comment="Sawmill Is Working" extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="files.qrc">:/images/Imgs/samwill.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="QuarryIcon">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="statusTip">
+     <string extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="whatsThis">
+     <string comment="Sawmill Is Working" extracomment="Sawmill Is Working"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="files.qrc">:/images/Imgs/Quarry.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

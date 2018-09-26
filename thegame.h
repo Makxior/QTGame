@@ -41,7 +41,8 @@ public:
     void UploadResources();
     void Building();
     Resources resources{50,50,50};
-    QTimer *sawmill = new QTimer(this);
+    QTimer *sawmillTimer = new QTimer(this);
+    QTimer *quarryTimer = new QTimer(this);
 
 private slots:
 
@@ -52,6 +53,7 @@ private slots:
     void on_actionSave_triggered();
     void Move(QLabel* player, int dir, int dir2);
     void Sawmill();
+    void Quarry();
     void LeaveASite();
 
 

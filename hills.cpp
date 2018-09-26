@@ -1,11 +1,11 @@
-#include "quarry.h"
-#include "ui_quarry.h"
+#include "hills.h"
+#include "ui_hills.h"
 #include <QSound>
 #include <QTimer>
 
-Quarry::Quarry(QWidget *parent) :
+Hills::Hills(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Quarry)
+    ui(new Ui::Hills)
 {
     ui->setupUi(this);
     QTimer *timer = new QTimer(this);
@@ -16,15 +16,15 @@ Quarry::Quarry(QWidget *parent) :
     timer2->start(2000);
 }
 
- void Quarry::Unlock()
+ void Hills::Unlock()
  {
     ui->pushButton->setVisible(true);
  }
-Quarry::~Quarry()
+Hills::~Hills()
 {
     delete ui;
 }
-void Quarry::CutARock()
+void Hills::CutARock()
 {
     int LuckyCut = qrand() % ((10 + 1) - 1) + 1;;
     if(LuckyCut == 10)
@@ -78,7 +78,7 @@ void Quarry::CutARock()
     ui->HowManyGold->setText(QString::number(NumberOfGold));
 
 }
-void Quarry::GrownARock()
+void Hills::GrownARock()
 {
     if(NumberOfRocks == 5 )
     {
@@ -111,14 +111,14 @@ void Quarry::GrownARock()
     }
 
 }
-void Quarry::on_exit_clicked()
+void Hills::on_exit_clicked()
 {
     ui->HowManyStone->setText("0");
     ui->HowManyGold->setText("0");
     this->close();
 }
 
-void Quarry::on_pushButton_clicked()
+void Hills::on_pushButton_clicked()
 {
     CutARock();
     ui->pushButton->setVisible(false);

@@ -10,6 +10,7 @@
         <file>Imgs/forest.png</file>
         <file>Imgs/tlo.png</file>
         <file>Imgs/samwill.png</file>
+        <file>Imgs/Hills.png</file>
         <file>Imgs/Quarry.png</file>
     </qresource>
     <qresource prefix="/player">
