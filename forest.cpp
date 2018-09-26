@@ -61,10 +61,8 @@ void Forest::CutATree()
     {
         ;//nothing happens, cant cut three when there are no trees
     }
-    //QString(NumberOfWood)
 
-    QString s = QString::number(NumberOfWood);
-    ui->HowMany->setText(s);
+    ui->HowMany->setText(QString::number(NumberOfWood));
 
 }
 void Forest::GrownATree()
@@ -108,5 +106,6 @@ void Forest::on_pushButton_clicked()
 
 void Forest::on_exit_clicked()
 {
+    ui->HowMany->setText("0");
     this->close();
 }

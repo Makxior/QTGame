@@ -1,13 +1,8 @@
 #include "thegame.h"
-#include "forest.h"
 #include "quarry.h"
+#include "forest.h"
 #include "buildingsite.h"
 #include "ui_thegame.h"
-#include <QKeyEvent>
-#include <QTimer>
-#include <QGraphicsItem>
-#include <QTime>
-#include <QSound>
 
 TheGame::TheGame(QWidget *parent) :
     QMainWindow(parent),
@@ -16,44 +11,65 @@ TheGame::TheGame(QWidget *parent) :
     ui->setupUi(this);
     //Player start position settings
     QTime time = QTime::currentTime();
-    qsrand((uint)time.msec());
+    qsrand(static_cast<uint>(time.msec()));
 
     player = qrand() % ((3 + 1) - 1) + 1;
     if(player == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/player1.png"));
     if(player == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/player2.png"));
     if(player == 3) ui->player->setPixmap(QPixmap(":/player/Imgs/player3.png"));
+    connect(sawmill, SIGNAL(timeout()), this, SLOT(Sawmill()));
 
 }
-bool kolizja(QLabel* first, QLabel* second)
+bool kolizja(QFrame* first, QFrame* second)
 {
-  if( first->x() >= second->x()-first->width() && first->x() <= second->x()+second->width() &&
-    first->y() >= second->y()-first->height() && first->y() <= second->y()+second->height())
+  if( first->x()+first->width() >= second->x()+10 && first->x() <= second->x()+second->width()-10 &&
+    first->y()+first->height() >= second->y()+10 && first->y() <= second->y()+second->height()-10)
     return true;
     else return false;
 }
+void TheGame::Sawmill()
+{
+    resources.wood++;
+    UploadResources();
+
+}
+void TheGame::LeaveASite()
+{
+    if(SawmillBuilt){
+        sawmill->start(2000);
+    }
+}
 void TheGame::Building()
 {
-    BuildingSite buildingsite;
-    buildingsite.setModal(true);
-    buildingsite.exec();
+    static BuildingSite buildingsite;
+    buildingsite.Start(resources.wood,resources.stone,resources.gold,SawmillBuilt,QuarryBuilt,WoodBoostBuilt,StoneBoostBuilt,GoldBoostBuilt,Marketbuilt);
+    SawmillBuilt =buildingsite.SawmillBuilt;
+    QuarryBuilt = buildingsite.QuarryBuilt;
+    WoodBoostBuilt = buildingsite.WoodBoostBuilt;
+    StoneBoostBuilt = buildingsite.StoneBoostBuilt;
+    GoldBoostBuilt = buildingsite.GoldBoostBuilt;
+    Marketbuilt = buildingsite.Marketbuilt;
+    resources.wood -=buildingsite.WoodSpent;
+    buildingsite.WoodSpent=0;
+    resources.stone -=buildingsite.StoneSpent;
+    buildingsite.StoneSpent=0;
+    LeaveASite();
 }
 void TheGame::GettingWood()
 {
-    Forest forest;
-    forest.setModal(true);
+    static Forest forest;
     forest.exec();
-    wood+=forest.NumberOfWood;
-    forest.NumberOfWood =0;
+    resources.wood+=forest.NumberOfWood;
+    forest.NumberOfWood=0;
 }
 void TheGame::GettingStone()
 {
-    Quarry quarry;
-    quarry.setModal(true);
+    static Quarry quarry;
     quarry.exec();
-    stone += quarry.NumberOfStone;
-    gold += quarry.NumberOfGold;
-    quarry.NumberOfStone = 0;
-    quarry.NumberOfGold = 0;
+    resources.stone += quarry.NumberOfStone;
+    resources.gold += quarry.NumberOfGold;
+    quarry.NumberOfGold=0;
+    quarry.NumberOfStone=0;
 }
 void TheGame::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Left){
@@ -83,9 +99,9 @@ TheGame::~TheGame()
 
 void TheGame::on_actionNew_triggered()
 {
-    wood =0;
-    stone =0;
-    gold =0;
+    resources.wood =0;
+    resources.stone =0;
+    resources.gold =0;
     ui->player->move(300,240);
     UploadResources();
 }
@@ -100,9 +116,9 @@ void TheGame::on_actionLoad_triggered()
     {
         int temp,temp2;
         QTextStream stream( &file );
-        stream >>wood;
-        stream >>stone;
-        stream >>gold;
+        stream >>resources.wood;
+        stream >>resources.stone;
+        stream >>resources.gold;
         UploadResources();
         stream>>temp>>temp2;
         ui->player->move(temp,temp2);
@@ -118,7 +134,7 @@ void TheGame::on_actionSave_triggered()
     if ( file.open(QIODevice::ReadWrite) )
     {
         QTextStream stream( &file );
-        stream << wood<<" "<<stone<<" "<<gold<<" "<<ui->player->x()<<" "<<ui->player->y();
+        stream << resources.wood<<" "<<resources.stone<<" "<<resources.gold<<" "<<ui->player->x()<<" "<<ui->player->y();
     }
 }
 void TheGame::Move(QLabel* player, int dir, int dir2)
@@ -142,12 +158,14 @@ void TheGame::Move(QLabel* player, int dir, int dir2)
             Building();
             UploadResources();
         }
+        if(kolizja(player,ui->ResourcesTable))
+        {
+            player->move(player->x()-dir,player->y()-dir2);
+        }
 }
 void TheGame::UploadResources()
 {
-    ui->AmountOfStone->setText("STONE : " + QString::number(stone));
-    ui->AmountOfWood->setText("WOOD  : " + QString::number(wood));
-    ui->AmountOfGold->setText("GOLD  : " + QString::number(gold));
-
+    ui->AmountOfStone->setText("STONE : " + QString::number(resources.stone));
+    ui->AmountOfWood->setText("WOOD  : " + QString::number(resources.wood));
+    ui->AmountOfGold->setText("GOLD  : " + QString::number(resources.gold));
 }
-

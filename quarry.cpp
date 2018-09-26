@@ -113,6 +113,8 @@ void Quarry::GrownARock()
 }
 void Quarry::on_exit_clicked()
 {
+    ui->HowManyStone->setText("0");
+    ui->HowManyGold->setText("0");
     this->close();
 }
 

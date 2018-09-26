@@ -13,8 +13,11 @@
   <property name="windowTitle">
    <string>Forest</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(255,255,255)</string>
+   <string notr="true">background-color: rgb(179,234,85)</string>
   </property>
   <widget class="QLabel" name="tree">
    <property name="geometry">
@@ -43,11 +46,28 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <pointsize>11</pointsize>
     </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(205,133,63);
+
+</string>
    </property>
    <property name="text">
     <string>Cut the tree</string>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="exit">
@@ -165,9 +185,9 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>210</y>
-     <width>42</width>
-     <height>56</height>
+     <y>215</y>
+     <width>31</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -177,7 +197,7 @@
     <pixmap resource="files.qrc">:/images/Imgs/ax.png</pixmap>
    </property>
    <property name="scaledContents">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <zorder>tree_5</zorder>

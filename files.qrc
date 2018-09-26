@@ -1,14 +1,16 @@
 <RCC>
     <qresource prefix="/images">
-        <file>Imgs/Cave.jpg</file>
-        <file>Imgs/Forest.png</file>
-        <file>Imgs/Quarry.png</file>
         <file>Imgs/stone.png</file>
-        <file>Imgs/tree.png</file>
         <file>Imgs/gold.png</file>
         <file>Imgs/pickaxe.png</file>
-        <file>Imgs/ax.png</file>
         <file>Imgs/buildingsite.png</file>
+        <file>Imgs/place.png</file>
+        <file>Imgs/tree.png</file>
+        <file>Imgs/ax.png</file>
+        <file>Imgs/forest.png</file>
+        <file>Imgs/tlo.png</file>
+        <file>Imgs/samwill.png</file>
+        <file>Imgs/Quarry.png</file>
     </qresource>
     <qresource prefix="/player">
         <file>Imgs/player1.png</file>

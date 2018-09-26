@@ -10,6 +10,19 @@
 #include <QCloseEvent>
 #include <QGraphicsRectItem>
 #include <QGraphicsItem>
+#include <QKeyEvent>
+#include <QTimer>
+#include <QGraphicsItem>
+#include <QTime>
+#include <QSound>
+
+
+struct Resources
+{
+    int wood;
+    int gold ;
+    int stone;
+};
 
 namespace Ui {
 class TheGame;
@@ -27,7 +40,8 @@ public:
     void GettingStone();
     void UploadResources();
     void Building();
-
+    Resources resources{50,50,50};
+    QTimer *sawmill = new QTimer(this);
 
 private slots:
 
@@ -37,11 +51,13 @@ private slots:
 
     void on_actionSave_triggered();
     void Move(QLabel* player, int dir, int dir2);
+    void Sawmill();
+    void LeaveASite();
+
 
 private:
-    int wood{0};
-    int stone{0};
-    int gold{0};
+    bool SawmillBuilt{false},QuarryBuilt{false},WoodBoostBuilt{false},StoneBoostBuilt{false},GoldBoostBuilt{false},Marketbuilt{false};
+
     int player;
     Ui::TheGame *ui;
     QString currentFile{""};
