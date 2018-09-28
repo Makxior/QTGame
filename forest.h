@@ -25,12 +25,14 @@ private slots:
     void on_exit_clicked();
 
     void CutATree();
-    void GrownATree();
+    void GrowATree();
     void Unlock();
+    void Start(int HowMuch);
 
 private:
     int NumberOfWood=0;
     int NumberOfTrees =5;
+    int HowMuchOnHit{1};
     Ui::Forest *ui;
 };
 

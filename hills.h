@@ -22,13 +22,16 @@ private slots:
 
     void on_pushButton_clicked();
     void CutARock();
-    void GrownARock();
+    void GrowARock();
     void Unlock();
+    void Start(int HowMuchStone, int Gold,int Chance);
 
 private:
     int NumberOfStone=0;
     int NumberOfGold=0;
     int NumberOfRocks =5;
+    int HowMuchOnHit{1},HowMuchGold{1};
+    int ChanceForGold{1};
     Ui::Hills *ui;
 };
 

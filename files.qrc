@@ -12,15 +12,16 @@
         <file>Imgs/samwill.png</file>
         <file>Imgs/Hills.png</file>
         <file>Imgs/Quarry.png</file>
+        <file>Imgs/WoodBoost.png</file>
+        <file>Imgs/stoneboost.png</file>
+        <file>Imgs/gooldboost.png</file>
     </qresource>
     <qresource prefix="/player">
-        <file>Imgs/player1.png</file>
-        <file>Imgs/player2.png</file>
-        <file>Imgs/player3.png</file>
         <file>Imgs/player.png</file>
-        <file>Imgs/player12.png</file>
-        <file>Imgs/player22.png</file>
-        <file>Imgs/player32.png</file>
+        <file>Imgs/Player1L.png</file>
+        <file>Imgs/Player1R.png</file>
+        <file>Imgs/Player2L.png</file>
+        <file>Imgs/Player2R.png</file>
     </qresource>
     <qresource prefix="/Sounds">
         <file>Sounds/Quarry.wav</file>

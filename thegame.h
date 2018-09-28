@@ -59,7 +59,7 @@ private slots:
 
 private:
     bool SawmillBuilt{false},QuarryBuilt{false},WoodBoostBuilt{false},StoneBoostBuilt{false},GoldBoostBuilt{false},Marketbuilt{false};
-
+    int HowMuchWood{1},HowMuchStone{1},HowMuchGold{1},ChanceForGold{1};
     int player;
     Ui::TheGame *ui;
     QString currentFile{""};

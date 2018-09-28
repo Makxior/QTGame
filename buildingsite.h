@@ -28,8 +28,6 @@ private slots:
 
     void on_Buildsawmill_clicked();
 
-
-
     void on_BuildQuarry_clicked();
 
     void on_BuildMarket_clicked();
@@ -37,6 +35,8 @@ private slots:
     void on_BuildStoneBoost_clicked();
 
     void on_BuildGoldBoost_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::BuildingSite *ui;

@@ -14,6 +14,12 @@ Forest::Forest(QWidget *parent) :
     connect(timer2, SIGNAL(timeout()), this, SLOT(Unlock()));
     timer2->start(2000);
 }
+void Forest::Start(int HowMuch)
+{
+    HowMuchOnHit = HowMuch;
+
+    QDialog::exec();
+}
 
  void Forest::Unlock()
  {
@@ -30,31 +36,31 @@ void Forest::CutATree()
     if(NumberOfTrees == 5 )
     {
         ui->tree_5->setVisible(false);
-        NumberOfWood++;
+        NumberOfWood+=HowMuchOnHit;
         NumberOfTrees--;
     }
     else if(NumberOfTrees ==4 )
     {
         ui->tree_4->setVisible(false);
-        NumberOfWood++;
+        NumberOfWood+=HowMuchOnHit;
         NumberOfTrees--;
     }
     else if(NumberOfTrees ==3 )
     {
         ui->tree_3->setVisible(false);
-        NumberOfWood++;
+        NumberOfWood+=HowMuchOnHit;
         NumberOfTrees--;
     }
     else if(NumberOfTrees ==2 )
     {
         ui->tree_2->setVisible(false);
-        NumberOfWood++;
+        NumberOfWood+=HowMuchOnHit;
         NumberOfTrees--;
     }
     else if(NumberOfTrees == 1 )
     {
         ui->tree->setVisible(false);
-        NumberOfWood++;
+        NumberOfWood+=HowMuchOnHit;
         NumberOfTrees--;
     }
     else if(NumberOfTrees ==0 )
@@ -65,7 +71,7 @@ void Forest::CutATree()
     ui->HowMany->setText(QString::number(NumberOfWood));
 
 }
-void Forest::GrownATree()
+void Forest::GrowATree()
 {
     if(NumberOfTrees == 5 )
     {

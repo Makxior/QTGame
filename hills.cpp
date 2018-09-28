@@ -9,13 +9,20 @@ Hills::Hills(QWidget *parent) :
 {
     ui->setupUi(this);
     QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(GrownARock()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(GrowARock()));
     timer->start(5000);
     QTimer *timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(Unlock()));
     timer2->start(2000);
 }
+void Hills::Start(int HowMuchStone, int Gold,int Chance)
+{
+    HowMuchOnHit = HowMuchStone;
+    HowMuchGold = Gold;
+    ChanceForGold = Chance;
 
+    QDialog::exec();
+}
  void Hills::Unlock()
  {
     ui->pushButton->setVisible(true);
@@ -26,11 +33,11 @@ Hills::~Hills()
 }
 void Hills::CutARock()
 {
-    int LuckyCut = qrand() % ((10 + 1) - 1) + 1;;
-    if(LuckyCut == 10)
+    int LuckyCut = qrand() % (10) + 1;;
+    if(LuckyCut <= ChanceForGold)
     {
         QSound::play(":/Sounds/Sounds/Gold.wav");
-        NumberOfGold++;
+        NumberOfGold+=HowMuchGold;
     }
     else
         {
@@ -38,35 +45,35 @@ void Hills::CutARock()
         {
             QSound::play(":/Sounds/Sounds/Quarry.wav");
             ui->rock_5->setVisible(false);
-            NumberOfStone++;
+            NumberOfStone+=HowMuchOnHit;
             NumberOfRocks--;
         }
         else if(NumberOfRocks ==4 )
         {
             QSound::play(":/Sounds/Sounds/Quarry.wav");
             ui->rock_4->setVisible(false);
-            NumberOfStone++;
+            NumberOfStone+=HowMuchOnHit;
             NumberOfRocks--;
         }
         else if(NumberOfRocks ==3 )
         {
             QSound::play(":/Sounds/Sounds/Quarry.wav");
             ui->rock_3->setVisible(false);
-            NumberOfStone++;
+            NumberOfStone+=HowMuchOnHit;
             NumberOfRocks--;
         }
         else if(NumberOfRocks ==2 )
         {
             QSound::play(":/Sounds/Sounds/Quarry.wav");
             ui->rock_2->setVisible(false);
-            NumberOfStone++;
+            NumberOfStone+=HowMuchOnHit;
             NumberOfRocks--;
         }
         else if(NumberOfRocks == 1 )
         {
             QSound::play(":/Sounds/Sounds/Quarry.wav");
             ui->rock->setVisible(false);
-            NumberOfStone++;
+            NumberOfStone+=HowMuchOnHit;
             NumberOfRocks--;
         }
         else if(NumberOfRocks ==0 )
@@ -78,7 +85,7 @@ void Hills::CutARock()
     ui->HowManyGold->setText(QString::number(NumberOfGold));
 
 }
-void Hills::GrownARock()
+void Hills::GrowARock()
 {
     if(NumberOfRocks == 5 )
     {
