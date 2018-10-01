@@ -16,9 +16,9 @@ public:
     ~BuildingSite();
 
     int AmountOfWood,AmountOfStone,AmountOfGold;
-    int WoodSpent{0},StoneSpent{0},GoldSpent{0};
+    int WoodBalance{0},StoneBalance{0},GoldBalance{0};
     void Start(int W,int S,int G,bool SB,bool Q,bool WBB,bool SBB,bool GBB,bool MB);
-    bool SawmillBuilt,QuarryBuilt,WoodBoostBuilt,StoneBoostBuilt,GoldBoostBuilt,Marketbuilt;
+    bool SawmillBuilt{false},QuarryBuilt{false},WoodBoostBuilt{false},StoneBoostBuilt{false},GoldBoostBuilt{false},Marketbuilt{false};
 
 private slots:
     void on_exit_clicked();
@@ -36,7 +36,8 @@ private slots:
 
     void on_BuildGoldBoost_clicked();
 
-    void on_pushButton_clicked();
+
+    void on_EnterMarket_clicked();
 
 private:
     Ui::BuildingSite *ui;

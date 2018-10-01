@@ -13,9 +13,9 @@ TheGame::TheGame(QWidget *parent) :
     QTime time = QTime::currentTime();
     qsrand(static_cast<uint>(time.msec()));
 
-    player = qrand() % (2) + 1;
-    if(player == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1R.png"));
-    if(player == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2R.png"));
+    Whichplayer = qrand() % (2) + 1;
+    if(Whichplayer == 1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1R.png"));
+    if(Whichplayer == 2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2R.png"));
 
     connect(sawmillTimer, SIGNAL(timeout()), this, SLOT(Sawmill()));
     ui->SawmillIcon->setVisible(false);
@@ -78,7 +78,7 @@ void TheGame::LeaveASite()
 }
 void TheGame::Building()
 {
-    static BuildingSite buildingsite;
+    BuildingSite buildingsite;
     buildingsite.Start(resources.wood,resources.stone,resources.gold,SawmillBuilt,QuarryBuilt,WoodBoostBuilt,StoneBoostBuilt,GoldBoostBuilt,Marketbuilt);
 
     SawmillBuilt =buildingsite.SawmillBuilt;
@@ -88,10 +88,10 @@ void TheGame::Building()
     GoldBoostBuilt = buildingsite.GoldBoostBuilt;
     Marketbuilt = buildingsite.Marketbuilt;
 
-    resources.wood -=buildingsite.WoodSpent;
-    buildingsite.WoodSpent=0;
-    resources.stone -=buildingsite.StoneSpent;
-    buildingsite.StoneSpent=0;
+    resources.wood +=buildingsite.WoodBalance;
+    buildingsite.WoodBalance=0;
+    resources.stone +=buildingsite.StoneBalance;
+    buildingsite.StoneBalance=0;
     LeaveASite();
 }
 void TheGame::GettingWood()
@@ -114,13 +114,13 @@ void TheGame::GettingStone()
 void TheGame::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Left){
             Move(ui->player, -24,0);
-            if(player==1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1L.png"));
-            if(player==2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2L.png"));
+            if(Whichplayer==1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1L.png"));
+            if(Whichplayer==2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2L.png"));
         }
         else if (event->key() == Qt::Key_Right){
             Move(ui->player, 24,0);
-            if(player==1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1R.png"));
-            if(player==2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2R.png"));
+            if(Whichplayer==1) ui->player->setPixmap(QPixmap(":/player/Imgs/Player1R.png"));
+            if(Whichplayer==2) ui->player->setPixmap(QPixmap(":/player/Imgs/Player2R.png"));
         }
         else if (event->key() == Qt::Key_Up){
             Move(ui->player, 0,-24);

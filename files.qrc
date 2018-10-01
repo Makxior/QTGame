@@ -15,6 +15,7 @@
         <file>Imgs/WoodBoost.png</file>
         <file>Imgs/stoneboost.png</file>
         <file>Imgs/gooldboost.png</file>
+        <file>Imgs/market.png</file>
     </qresource>
     <qresource prefix="/player">
         <file>Imgs/player.png</file>

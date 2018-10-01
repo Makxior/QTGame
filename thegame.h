@@ -23,6 +23,13 @@ struct Resources
     int gold ;
     int stone;
 };
+struct Soldier
+{
+    int Hp{100};
+    int Attack{10};
+    int Def{100};
+    int Level{1};
+};
 
 namespace Ui {
 class TheGame;
@@ -41,6 +48,7 @@ public:
     void UploadResources();
     void Building();
     Resources resources{50,50,50};
+    Soldier soldier;
     QTimer *sawmillTimer = new QTimer(this);
     QTimer *quarryTimer = new QTimer(this);
 
@@ -60,9 +68,8 @@ private slots:
 private:
     bool SawmillBuilt{false},QuarryBuilt{false},WoodBoostBuilt{false},StoneBoostBuilt{false},GoldBoostBuilt{false},Marketbuilt{false};
     int HowMuchWood{1},HowMuchStone{1},HowMuchGold{1},ChanceForGold{1};
-    int player;
+    int Whichplayer;
     Ui::TheGame *ui;
-    QString currentFile{""};
 };
 
 #endif // THEGAME_H
