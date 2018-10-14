@@ -15,7 +15,21 @@
 #include <QGraphicsItem>
 #include <QTime>
 #include <QSound>
+#include <QModelIndex>
+#include <fstream>
+#include <iostream>
 
+struct Weapon
+{
+    int Id{0};
+    int BonusHp{0};
+    int BonusAttack{0};
+    int BonusDef{0};
+    int Cost{0};
+    int WhichSlot{0};
+    int LvlNeeded{0};
+    bool equipped{false};
+};
 
 struct Resources
 {
@@ -27,8 +41,11 @@ struct Soldier
 {
     int Hp{100};
     int Attack{10};
-    int Def{100};
+    int Def{10};
     int Level{1};
+    QVector<Weapon> weapons;
+    bool Slots[3];
+    void LoadWeapon(Soldier sol, std::fstream& str);
 };
 
 namespace Ui {
@@ -46,8 +63,11 @@ public:
     void GettingWood();
     void GettingStone();
     void UploadResources();
+    void UploadStats();
     void Building();
-    Resources resources{50,50,50};
+    void Armory();
+    void AddWeaponsStats(const Weapon& Wp);
+    Resources resources{999,999,999};
     Soldier soldier;
     QTimer *sawmillTimer = new QTimer(this);
     QTimer *quarryTimer = new QTimer(this);
@@ -64,6 +84,7 @@ private slots:
     void Quarry();
     void LeaveASite();
 
+    void on_actionExit_triggered();
 
 private:
     bool SawmillBuilt{false},QuarryBuilt{false},WoodBoostBuilt{false},StoneBoostBuilt{false},GoldBoostBuilt{false},Marketbuilt{false};

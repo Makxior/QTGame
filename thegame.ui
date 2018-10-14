@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1183</width>
     <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
+    <width>1100</width>
     <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1200</width>
-    <height>600</height>
+    <height>667</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -56,8 +56,8 @@
    <widget class="QLabel" name="player">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>200</y>
+      <x>110</x>
+      <y>250</y>
       <width>60</width>
       <height>87</height>
      </rect>
@@ -75,8 +75,8 @@
    <widget class="QLabel" name="forest">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
+      <x>60</x>
+      <y>400</y>
       <width>191</width>
       <height>161</height>
      </rect>
@@ -94,10 +94,10 @@
    <widget class="QFrame" name="ResourcesTable">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>10</y>
-      <width>151</width>
-      <height>71</height>
+      <x>0</x>
+      <y>0</y>
+      <width>451</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -124,8 +124,8 @@
     <widget class="QLabel" name="AmountOfGold">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
+       <x>300</x>
+       <y>10</y>
        <width>131</width>
        <height>16</height>
       </rect>
@@ -142,7 +142,7 @@
       <string notr="true">color:rgb(205,180,0)</string>
      </property>
      <property name="text">
-      <string>GOLD  : 50</string>
+      <string>GOLD : 9999</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -151,8 +151,8 @@
     <widget class="QLabel" name="AmountOfStone">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
+       <x>160</x>
+       <y>10</y>
        <width>131</width>
        <height>16</height>
       </rect>
@@ -169,7 +169,7 @@
       <string notr="true">color:rgb(105,105,105)</string>
      </property>
      <property name="text">
-      <string>STONE : 50</string>
+      <string>STONE : 9999</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -196,7 +196,7 @@
       <string notr="true">color:	rgb(139,69,19)</string>
      </property>
      <property name="text">
-      <string>WOOD  : 50</string>
+      <string>WOOD : 9999</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -206,8 +206,8 @@
    <widget class="QLabel" name="quarry">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>10</y>
+      <x>50</x>
+      <y>40</y>
       <width>191</width>
       <height>161</height>
      </rect>
@@ -228,10 +228,10 @@
    <widget class="QLabel" name="buildingSite">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>366</y>
-      <width>181</width>
-      <height>171</height>
+      <x>440</x>
+      <y>400</y>
+      <width>191</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="text">
@@ -250,10 +250,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>180</y>
-      <width>61</width>
-      <height>61</height>
+      <x>0</x>
+      <y>520</y>
+      <width>51</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -281,8 +281,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>170</y>
+      <x>0</x>
+      <y>140</y>
       <width>51</width>
       <height>51</height>
      </rect>
@@ -309,10 +309,10 @@
    <widget class="QLabel" name="WoodboostIcon">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>47</width>
-      <height>31</height>
+      <x>0</x>
+      <y>410</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -328,8 +328,8 @@
    <widget class="QLabel" name="StoneboostIcon">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>0</y>
+      <x>0</x>
+      <y>90</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -347,8 +347,8 @@
    <widget class="QLabel" name="GoldboostIcon">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>0</y>
+      <x>0</x>
+      <y>40</y>
       <width>61</width>
       <height>51</height>
      </rect>
@@ -363,13 +363,171 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QFrame" name="StatsTable">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>0</y>
+      <width>601</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1200</width>
+      <height>600</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(246, 244, 243)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>3</number>
+    </property>
+    <property name="midLineWidth">
+     <number>4</number>
+    </property>
+    <widget class="QLabel" name="AmountOfDef">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>10</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(110,40,0)</string>
+     </property>
+     <property name="text">
+      <string>Defens : 9999</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountOfAttack">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>10</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(50,50,200)</string>
+     </property>
+     <property name="text">
+      <string>Attack : 9999</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountOfHp">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:	rgb(240,20,20)</string>
+     </property>
+     <property name="text">
+      <string>Health : 9999</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AmountOfLevel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Level : 99</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="armory">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>40</y>
+      <width>191</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="files.qrc">:/images/Imgs/armory.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
+     <width>1183</width>
      <height>21</height>
     </rect>
    </property>

@@ -19,9 +19,6 @@ void BuildingSite::Start(int W,int S,int G,bool SB,bool QB,bool WBB,bool SBB,boo
     AmountOfWood = W;
     AmountOfStone = S;
     AmountOfGold = G;
-    ui->AmountOfWood->setText("WOOD  : " + QString::number(AmountOfWood));
-    ui->AmountOfStone->setText("STONE : " + QString::number(AmountOfStone));
-    ui->AmountOfGold->setText("WOOD  : " + QString::number(AmountOfGold));
     SawmillBuilt =SB;
     QuarryBuilt = QB;
     WoodBoostBuilt = WBB;
@@ -64,6 +61,7 @@ void BuildingSite::Start(int W,int S,int G,bool SB,bool QB,bool WBB,bool SBB,boo
         ui->label_Market->setVisible(false);
         ui->Market->setPixmap(QPixmap(":/images/Imgs/market.png"));
     }
+    UploadResources();
     QDialog::exec();
 }
 

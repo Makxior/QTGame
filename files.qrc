@@ -8,7 +8,6 @@
         <file>Imgs/tree.png</file>
         <file>Imgs/ax.png</file>
         <file>Imgs/forest.png</file>
-        <file>Imgs/tlo.png</file>
         <file>Imgs/samwill.png</file>
         <file>Imgs/Hills.png</file>
         <file>Imgs/Quarry.png</file>
@@ -16,6 +15,7 @@
         <file>Imgs/stoneboost.png</file>
         <file>Imgs/gooldboost.png</file>
         <file>Imgs/market.png</file>
+        <file>Imgs/armory.png</file>
     </qresource>
     <qresource prefix="/player">
         <file>Imgs/player.png</file>
