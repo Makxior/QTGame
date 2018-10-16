@@ -34,8 +34,6 @@ void armory::Start(int gold, int lvl,QVector<Weapon> weapons,int atack,int def,i
 }
 void armory::on_ListOfitems_doubleClicked(const QModelIndex &index)
 {
-    if(index.row() != 3)
-    {
         QMessageBox msgBox;
         bool have{true};
         if((AllweaponsInArmory[index.row()].LvlNeeded <= LvlInArmory) && (AllweaponsInArmory[index.row()].Cost<=AmountOfGold))
@@ -65,7 +63,7 @@ void armory::on_ListOfitems_doubleClicked(const QModelIndex &index)
             msgBox.exec();
         }
         UploadStats();
-    }
+ 
 }
 void armory::UploadResources()
 {

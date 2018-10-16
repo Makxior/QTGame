@@ -81,11 +81,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    <string notr="true">border: 3px solid black;</string>
    </property>
    <item>
     <property name="text">
-     <string>Drewniany miecz</string>
+     <string>Drewniany miecz  30G</string>
     </property>
     <property name="font">
      <font>
@@ -99,7 +99,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Kamienny miecz</string>
+     <string>Kamienny miecz 50G</string>
     </property>
     <property name="font">
      <font>
@@ -113,7 +113,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Złoty miecz</string>
+     <string>Złoty miecz 100G</string>
     </property>
     <property name="font">
      <font>
@@ -128,7 +128,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Skórzana zbroja</string>
+     <string>Skórzana zbroja 50G</string>
     </property>
     <property name="font">
      <font>
@@ -142,7 +142,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Płytowa zbroja</string>
+     <string>Płytowa zbroja 200G</string>
     </property>
     <property name="font">
      <font>
@@ -156,7 +156,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Złota zbroja</string>
+     <string>Złota zbroja 500G</string>
     </property>
     <property name="font">
      <font>
@@ -170,7 +170,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Skórzana tarcza</string>
+     <string>Skórzana tarcza 25G</string>
     </property>
     <property name="font">
      <font>
@@ -184,7 +184,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Drewniana tarcza</string>
+     <string>Drewniana tarcza 50 G</string>
     </property>
     <property name="font">
      <font>
@@ -198,7 +198,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Żelażna tarcza</string>
+     <string>Żelażna tarcza 80G</string>
     </property>
     <property name="font">
      <font>

@@ -23,20 +23,25 @@ public:
     friend void TheGame::Armory();
     void Start(int gold, int lvl,QVector<Weapon> weapons,int atack,int def,int hp);
     int AmountOfGold;
-    Weapon Allweapons[20];
+    Weapon AllweaponsInArmory[20]={ Weapon{0,0,5,5,30,1,1,false}, //drewniany miecz
+                                    Weapon{1,0,10,5,50,1,1,false}, //kamienny miecz
+                                    Weapon{2,0,20,5,100,1,2,false}};//złoty miecz
     int GoldBalance{0};
 
 private slots:
 
     void on_ListOfitems_doubleClicked(const QModelIndex &index);
     void UploadResources();
-    void LoadWepons();
     void UploadStats();
     void AddWeaponsStats(const Weapon& WP);
 
     void on_exit_clicked();
 
-    void on_exit_2_clicked();
+    void on_SellSword_clicked();
+
+    void on_SellArmor_clicked();
+
+    void on_SellShield_clicked();
 
 private:
     Ui::armory *ui;

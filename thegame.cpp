@@ -189,13 +189,20 @@ void TheGame::on_actionLoad_triggered()
         Marketbuilt=booltemp;
         int size;
         stream>>size;
+        int Id;
         for(int i =0; i<size;i++)
         {
-            int Id,Atack,HP,Def,Slot,lvl;
-            stream>>Id>>Atack>>HP>>Def>>Slot>>lvl;
-            soldier.weapons.append(Weapon{Id,Atack,HP,Def,Slot,0,lvl,true});
+            stream>>Id;
+            soldier.weapons.append(Weapon{Id,Allweapons[Id].BonusHp,
+                                          Allweapons[Id].BonusAttack,
+                                          Allweapons[Id].BonusDef,
+                                          Allweapons[Id].Cost,
+                                          Allweapons[Id].WhichSlot,
+                                          Allweapons[Id].LvlNeeded,
+                                          true});//TUTAJ
         }
         LeaveASite();
+        UploadStats();
     }
 }
 void TheGame::on_actionSave_triggered()
@@ -212,7 +219,7 @@ void TheGame::on_actionSave_triggered()
         stream <<" "<<soldier.weapons.size()<<" ";
         for(Weapon i:soldier.weapons)
         {
-            stream<<i.Id<<" "<<i.BonusAttack<<" "<<i.BonusDef<<" "<<i.BonusHp<<" "<<i.WhichSlot<<" "<<i.Cost<<" "<<i.LvlNeeded<<" ";
+            stream<<i.Id<<" ";
         }
     }
 }
@@ -280,12 +287,6 @@ void TheGame::AddWeaponsStats(const Weapon& WP)
     soldier.Attack+=WP.BonusAttack;
     soldier.Def+=WP.BonusDef;
 }
-
-/*std::fstream& operator<<(std::fstream& stream,const Weapon& WP)
-{
-    stream<<" "<<WP.BonusAttack<<" "<<WP.BonusDef<<" "<<WP.BonusHp<<" "<<WP.WhichSlot<<std::endl;
-    return stream;
-} */
 
 void Soldier::LoadWeapon(Soldier sol, std::fstream &str)
 {
