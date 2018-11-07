@@ -29,6 +29,8 @@ struct Weapon
     int WhichSlot{0};
     int LvlNeeded{0};
     bool equipped{false};
+    Weapon() = default;
+    Weapon(const Weapon& wp)= default;
 };
 
 struct Resources
@@ -42,9 +44,21 @@ struct Soldier
     int Hp{100};
     int Attack{10};
     int Def{10};
-    int Level{1};
-    QVector<Weapon> weapons;
+    double Level{1};
+    QVector<Weapon> weapons{};
     bool Slots[3];
+    Soldier(): Hp(100),Attack(10),Def(10),Level(1),Slots{false}{}
+    Soldier(const Soldier& sol)
+    {
+        this->Hp = sol.Hp;
+        this->Attack = sol.Attack;
+        this->Def = sol.Def;
+        this->Level = sol.Level;
+        this->weapons = sol.weapons;
+        this->Slots[0] = sol.Slots[0];
+        this->Slots[1] = sol.Slots[1];
+        this->Slots[2] = sol.Slots[2];
+    }
     void LoadWeapon(Soldier sol, std::fstream& str);
 };
 
@@ -66,17 +80,19 @@ public:
     void UploadStats();
     void Building();
     void Armory();
+    void EnterOrcCamp();
     void AddWeaponsStats(const Weapon& Wp);
     Resources resources{999,999,999};
-    Weapon Allweapons[20]={Weapon{0,0,5,5,30,1,1,false}, //drewniany miecz
+    Weapon Allweapons[20]= {
+                           Weapon{0,0,5,5,30,1,1,false}, //drewniany miecz
                            Weapon{1,0,10,5,50,1,1,false}, //kamienny miecz
-                           Weapon{2,0,20,5,100,1,2,false},//złoty miecz
+                           Weapon{2,0,20,5,200,1,2,false},//złoty miecz
                            Weapon{3,0,0,10,50,2,1,false},//skorzana zbroja
                            Weapon{4,0,0,20,200,2,3,false},//płytowa zbroja
                            Weapon{5,0,0,40,500,2,5,false},//złota zbroja
-                           Weapon{6,0,0,5,25,3,2,false},//złota zbroja
-                           Weapon{7,0,0,10,50,3,2,false},//złota zbroja
-                           Weapon{8,0,0,15,100,3,3,false}};//złota zbroja
+                           Weapon{6,0,0,5,25,3,2,false},//skorzana tarcz
+                           Weapon{7,0,0,10,50,3,2,false},//drewniana tarcza
+                           Weapon{8,0,0,15,100,3,3,false}};//zelazna tarcza
     Soldier soldier;
     QTimer *sawmillTimer = new QTimer(this);
     QTimer *quarryTimer = new QTimer(this);

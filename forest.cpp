@@ -7,16 +7,18 @@ Forest::Forest(QWidget *parent) :
     ui(new Ui::Forest)
 {
     ui->setupUi(this);
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(GrownATree()));
-    timer->start(5000);
-    QTimer *timer2 = new QTimer(this);
-    connect(timer2, SIGNAL(timeout()), this, SLOT(Unlock()));
-    timer2->start(2000);
 }
 void Forest::Start(int HowMuch)
 {
     HowMuchOnHit = HowMuch;
+    QTimer *unlock = new QTimer(this);
+    QTimer *timer2 = new QTimer(this);
+
+    connect(unlock, SIGNAL(timeout()), this, SLOT(Unlock()));
+    unlock->start(1500);
+
+    connect(timer2, SIGNAL(timeout()), this, SLOT(GrowATree()));
+    timer2->start(3000);
 
     QDialog::exec();
 }

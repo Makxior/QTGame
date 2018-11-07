@@ -31,7 +31,8 @@ SOURCES += \
     buildingsite.cpp \
     hills.cpp \
     market.cpp \
-    armory.cpp
+    armory.cpp \
+    orccamp.cpp
 
 HEADERS += \
         thegame.h \
@@ -39,7 +40,8 @@ HEADERS += \
     buildingsite.h \
     hills.h \
     market.h \
-    armory.h
+    armory.h \
+    orccamp.h
 
 FORMS += \
         thegame.ui \
@@ -47,7 +49,8 @@ FORMS += \
     buildingsite.ui \
     hills.ui \
     market.ui \
-    armory.ui
+    armory.ui \
+    orccamp.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -56,3 +59,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     files.qrc
+
+DISTFILES +=

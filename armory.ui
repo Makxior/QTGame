@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
-    <height>461</height>
+    <width>600</width>
+    <height>460</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>460</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -74,18 +86,18 @@
   <widget class="QListWidget" name="ListOfitems">
    <property name="geometry">
     <rect>
-     <x>335</x>
+     <x>235</x>
      <y>40</y>
-     <width>251</width>
+     <width>351</width>
      <height>281</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+    <string notr="true">border: 3px solid black;</string>
    </property>
    <item>
     <property name="text">
-     <string>Drewniany miecz</string>
+     <string>Drewniany miecz  COST:30 G HP:0 ATK: 5  DEF:5   LVL:1</string>
     </property>
     <property name="font">
      <font>
@@ -94,12 +106,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Kamienny miecz</string>
+     <string>Kamienny  miecz  COST:50 G HP:0 ATK:10  DEF:5   LVL:1</string>
     </property>
     <property name="font">
      <font>
@@ -108,12 +120,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Złoty miecz</string>
+     <string>Złoty miecz            COST:200G HP:0 ATK:10  DEF:5   LVL:2</string>
     </property>
     <property name="font">
      <font>
@@ -123,12 +135,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Skórzana zbroja</string>
+     <string>Skórzana zbroja    COST:50 G HP:0 ATK:0  DEF:10  LVL:1</string>
     </property>
     <property name="font">
      <font>
@@ -137,12 +149,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Płytowa zbroja</string>
+     <string>Płytowa zbroja      COST:200G HP:0 ATK:0  DEF:20  LVL:3</string>
     </property>
     <property name="font">
      <font>
@@ -151,12 +163,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Złota zbroja</string>
+     <string>Złota zbroja           COST:500G HP:0 ATK:0  DEF:40  LVL:5</string>
     </property>
     <property name="font">
      <font>
@@ -165,12 +177,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Skórzana tarcza</string>
+     <string>Skórzana tarcza   COST:25 G HP:0 ATK:0  DEF:5  LVL:2</string>
     </property>
     <property name="font">
      <font>
@@ -179,12 +191,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Drewniana tarcza</string>
+     <string>Drewniana tarczaCOST:50 G HP:0 ATK:0  DEF:10  LVL:2</string>
     </property>
     <property name="font">
      <font>
@@ -193,12 +205,12 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Żelażna tarcza</string>
+     <string>Żelazna tarcza   COST:100G HP:0 ATK:0  DEF:15  LVL:3</string>
     </property>
     <property name="font">
      <font>
@@ -207,7 +219,7 @@
      </font>
     </property>
     <property name="textAlignment">
-     <set>AlignCenter</set>
+     <set>AlignLeading|AlignVCenter</set>
     </property>
    </item>
   </widget>

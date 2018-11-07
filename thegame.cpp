@@ -1,4 +1,5 @@
 #include "thegame.h"
+#include "orccamp.h"
 #include "hills.h"
 #include "forest.h"
 #include "buildingsite.h"
@@ -58,6 +59,13 @@ void TheGame::Quarry()
         resources.stone++;
         UploadResources();
     }
+}
+void TheGame::EnterOrcCamp()
+{
+    OrcCamp orccamp;
+    orccamp.Start(resources.gold,soldier);
+
+    UploadStats();
 }
 void TheGame::LeaveASite()
 {
@@ -258,6 +266,11 @@ void TheGame::Move(QLabel* player, int dir, int dir2)
     {
         player->move(player->x()-dir,player->y()-dir2);
         Armory();
+    }
+    if(kolizja(player,ui->OrcCamp))
+    {
+        player->move(player->x()-dir,player->y()-dir2);
+        EnterOrcCamp();
     }
     UploadResources();
 }

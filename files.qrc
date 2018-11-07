@@ -16,6 +16,7 @@
         <file>Imgs/gooldboost.png</file>
         <file>Imgs/market.png</file>
         <file>Imgs/armory.png</file>
+        <file>Imgs/OrcCamp.jpg</file>
     </qresource>
     <qresource prefix="/player">
         <file>Imgs/player.png</file>

@@ -8,18 +8,21 @@ Hills::Hills(QWidget *parent) :
     ui(new Ui::Hills)
 {
     ui->setupUi(this);
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(GrowARock()));
-    timer->start(5000);
-    QTimer *timer2 = new QTimer(this);
-    connect(timer2, SIGNAL(timeout()), this, SLOT(Unlock()));
-    timer2->start(2000);
 }
 void Hills::Start(int HowMuchStone, int Gold,int Chance)
 {
     HowMuchOnHit = HowMuchStone;
     HowMuchGold = Gold;
     ChanceForGold = Chance;
+
+    QTimer *Grow = new QTimer(this);
+    QTimer *unlock = new QTimer(this);
+
+    connect(Grow, SIGNAL(timeout()), this, SLOT(GrowARock()));
+    Grow->start(3000);
+
+    connect(unlock, SIGNAL(timeout()), this, SLOT(Unlock()));
+    unlock->start(1500);
 
     QDialog::exec();
 }

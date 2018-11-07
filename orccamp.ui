@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>armory</class>
- <widget class="QDialog" name="armory">
+ <class>OrcCamp</class>
+ <widget class="QDialog" name="OrcCamp">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
-    <height>461</height>
+    <width>1012</width>
+    <height>481</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -17,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>40</y>
+     <y>0</y>
      <width>171</width>
      <height>31</height>
     </rect>
@@ -71,150 +77,10 @@
     </property>
    </widget>
   </widget>
-  <widget class="QListWidget" name="ListOfitems">
-   <property name="geometry">
-    <rect>
-     <x>335</x>
-     <y>40</y>
-     <width>251</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 3px solid black;</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Drewniany miecz  30G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Kamienny miecz 50G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Złoty miecz 100G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Skórzana zbroja 50G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Płytowa zbroja 200G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Złota zbroja 500G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Skórzana tarcza 25G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Drewniana tarcza 50 G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Żelażna tarcza 80G</string>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="textAlignment">
-     <set>AlignCenter</set>
-    </property>
-   </item>
-  </widget>
   <widget class="QFrame" name="StatsTable">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>410</x>
      <y>0</y>
      <width>601</width>
      <height>31</height>
@@ -349,86 +215,6 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="exit">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>270</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Leave Armory</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="SellSword">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>380</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Sell Sword</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="SellArmor">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>380</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Sell Armor</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="SellShield">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>380</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Sell Shield</string>
-   </property>
   </widget>
  </widget>
  <resources/>

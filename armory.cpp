@@ -13,7 +13,7 @@ armory::~armory()
 {
     delete ui;
 }
-void armory::Start(int gold, int lvl,QVector<Weapon> weapons,int atack,int def,int hp)
+void armory::Start(int gold, double lvl,QVector<Weapon> weapons,int atack,int def,int hp)
 {
     AmountOfGold = gold;
     WeaponsInArmory = weapons;
@@ -34,8 +34,6 @@ void armory::Start(int gold, int lvl,QVector<Weapon> weapons,int atack,int def,i
 }
 void armory::on_ListOfitems_doubleClicked(const QModelIndex &index)
 {
-    if(index.row() != 3)
-    {
         QMessageBox msgBox;
         bool have{true};
         if((AllweaponsInArmory[index.row()].LvlNeeded <= LvlInArmory) && (AllweaponsInArmory[index.row()].Cost<=AmountOfGold))
@@ -65,7 +63,7 @@ void armory::on_ListOfitems_doubleClicked(const QModelIndex &index)
             msgBox.exec();
         }
         UploadStats();
-    }
+
 }
 void armory::UploadResources()
 {
@@ -107,6 +105,8 @@ void armory::on_SellSword_clicked()
             msgBox.setText("You have sold your sword");
             msgBox.exec();
             ui->ListOfitems->item(WeaponsInArmory[i].Id)->setTextColor("black");
+            GoldBalance+= ((WeaponsInArmory[i].Cost)/2);
+            AmountOfGold += ((WeaponsInArmory[i].Cost)/2);
             WeaponsInArmory.remove(i);
             break;
         }
@@ -122,9 +122,11 @@ void armory::on_SellArmor_clicked()
         if(WeaponsInArmory[i].WhichSlot == 2) // 2 = armor
         {
             QMessageBox msgBox;
-            msgBox.setText("You have sold your sword");
+            msgBox.setText("You have sold your armor");
             msgBox.exec();
             ui->ListOfitems->item(WeaponsInArmory[i].Id)->setTextColor("black");
+            GoldBalance+= ((WeaponsInArmory[i].Cost)/2);
+            AmountOfGold += ((WeaponsInArmory[i].Cost)/2);
             WeaponsInArmory.remove(i);
             break;
         }
@@ -140,9 +142,11 @@ void armory::on_SellShield_clicked()
         if(WeaponsInArmory[i].WhichSlot == 3) // 2 = shield
         {
             QMessageBox msgBox;
-            msgBox.setText("You have sold your sword");
+            msgBox.setText("You have sold your shield");
             msgBox.exec();
             ui->ListOfitems->item(WeaponsInArmory[i].Id)->setTextColor("black");
+            GoldBalance+= ((WeaponsInArmory[i].Cost)/2);
+            AmountOfGold += ((WeaponsInArmory[i].Cost)/2);
             WeaponsInArmory.remove(i);
             break;
         }

@@ -21,11 +21,18 @@ public:
     explicit armory(QWidget *parent = nullptr);
     ~armory();
     friend void TheGame::Armory();
-    void Start(int gold, int lvl,QVector<Weapon> weapons,int atack,int def,int hp);
+    void Start(int gold, double lvl,QVector<Weapon> weapons,int atack,int def,int hp);
     int AmountOfGold;
-    Weapon AllweaponsInArmory[20]={ Weapon{0,0,5,5,30,1,1,false}, //drewniany miecz
-                                    Weapon{1,0,10,5,50,1,1,false}, //kamienny miecz
-                                    Weapon{2,0,20,5,100,1,2,false}};//złoty miecz
+    Weapon AllweaponsInArmory[20]= {
+                           Weapon{0,0,5,5,30,1,1,false}, //drewniany miecz
+                           Weapon{1,0,10,5,50,1,1,false}, //kamienny miecz
+                           Weapon{2,0,20,5,200,1,2,false},//złoty miecz
+                           Weapon{3,0,0,10,50,2,1,false},//skorzana zbroja
+                           Weapon{4,0,0,20,200,2,3,false},//płytowa zbroja
+                           Weapon{5,0,0,40,500,2,5,false},//złota zbroja
+                           Weapon{6,0,0,5,25,3,2,false},//skorzana tarcz
+                           Weapon{7,0,0,10,50,3,2,false},//drewniana tarcza
+                           Weapon{8,0,0,15,100,3,3,false}};//zelazna tarcza
     int GoldBalance{0};
 
 private slots:
@@ -46,7 +53,7 @@ private slots:
 private:
     Ui::armory *ui;
     QVector<Weapon>WeaponsInArmory;
-    int LvlInArmory;
+    double LvlInArmory;
     int AttackInArmory;
     int DefInArmory;
     int HpInArmory;
